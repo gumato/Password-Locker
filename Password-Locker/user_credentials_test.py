@@ -9,7 +9,11 @@ class TestUser(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
-     
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        User.user_list = []
     def setUp(self):
          '''
          method to create user account before each test cases.
@@ -29,6 +33,8 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user()
         self.assertEqual(len(User.users_list),1)
+     
+    
 
 
      
