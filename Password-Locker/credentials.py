@@ -1,21 +1,24 @@
+import pyperclip
+import string
+import random
 import string
 class Credential:
     '''
     Class to create account credentials,generate password and save their information
     '''
     credentials_list = []
-    # user_credentials_list = []
-    # @classmethod
-    # def check_user(cls,first_name,password):
-    #     '''
-    #     Method that checks if the name and password entered match entries in the users_list
-    #     '''
-    #     current_user = ''
-    #     for user in User_list:
-    #         if(user.first_name == first_name and user.password == password):
-    #             current_user = user.first_name
-    #
-    #     return current_user
+
+    @classmethod
+    def check_user(cls,first_name,password):
+        '''
+        Method that checks if the name and password entered match entries in the users_list
+        '''
+        current_user = ''
+        for user in User_list:
+            if(user.first_name == first_name and user.password == password):
+                current_user = user.first_name
+
+        return current_user
 
     def __init__(self,user_name,account_name,password, confirm_password):
         '''
@@ -23,8 +26,9 @@ class Credential:
         '''
         self.user_name = user_name
         self.account_name = account_name
+        self.site_name =site_name
         self.password = password
-        self.confirm_password = confirm_password
+
 
     def save_credentials(self):
         '''
@@ -41,26 +45,26 @@ class Credential:
 
 
     @classmethod
-    def find_by_user_name(cls,user_name):
+    def find_by_site_name(cls,user_name):
         '''
-		Method that takes in a user_name and returns a credential that matches the user_name.
+		Method that takes in a sit_name and returns a credential that matches the site_name.
 		'''
         for credential in cls.credentials_list:
-            if credential.user_name == user_name:
+            if credential.site_name == site_name:
                 return credential
 
     @classmethod
-    def display_all_details(cls):
+    def display_credentials(cls,user_name):
         '''
         Class method to display list of  credentials saved
         '''
-        return cls.user_detail
+        return cls.user_name
 
 
     @classmethod
-    def copy_credential(cls,user_name):
+    def copy_credential(cls,site_name):
         '''
-		Class method that copies a credential's info after the credential's user name is entered
+		Class method that copies a credential's info after the credential's site name is entered
 		'''
-        find_credential = Credential.find_by_user_name(user_name)
+        find_credential = Credential.find_by_site_name(site_name)
         return pyperclip.copy(find_credential.password)
