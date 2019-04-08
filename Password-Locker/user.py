@@ -15,3 +15,14 @@ class User:
         Save_user method saves user objects into user_list.
         '''
         User.users_list.append(self)
+
+    @classmethod
+    def check_user(cls,password):
+        '''
+        Method that checks if the name and password entered match entries in the users_list
+        '''
+        for user in cls.users_list:
+            if user.password == password:
+                return True
+
+        return False
