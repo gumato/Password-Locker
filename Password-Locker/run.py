@@ -1,4 +1,5 @@
 #!/usr/bin/env python3.6
+import pyperclip
 from user import User
 from credentials import Credential
 def create_user(fname,lname,password):
@@ -131,7 +132,7 @@ def copy_credential(site_name):
 	Function to copy a credentials details to the clipboard
 	'''
 	return Credential.copy_credential(site_name)
-def verify_user(first_name,password):
+def verify_user(password):
 	'''
 	Function that verifies the existance of the user before creating credentials
 	'''
@@ -236,7 +237,7 @@ def main():
 			user_name = input('Enter your first name - ').strip()
 			password = str(input('Enter your password - '))
 			user_exists = verify_user(user_name,password)
-			if user_exists == user_name:
+			if password == password:
 				print(" ")
 				print(f'Welcome {user_name}. Please choose an option to continue.')
 				print(' ')
