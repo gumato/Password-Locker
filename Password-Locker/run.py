@@ -94,7 +94,7 @@ def main():
 					print("*"*10)
 					if short_code == 'ex':
 						print(' ')
-						print('Bye')
+						print(f'Bye{user_name}')
 						break
 					elif short_code == 'cc':
 						print(' ')
@@ -139,8 +139,8 @@ def main():
 						chosen_site = input('Enter the site name for the credential password to copy: ')
 						copy_credential(chosen_site)
 						print('')
-					# else:
-					# 	print('Oops! Wrong option entered. Try again.')
+					else:
+						print('Oops! Wrong option entered. Try again.')
 
 			else:
 				print(' ')
