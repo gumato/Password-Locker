@@ -2,9 +2,9 @@
 
 ## Password Locker.7th April 2019.
 
-## By Pricilla Gumato.
+## By Pricilla Gumato
 
-## Description.
+## Description
 
    Password locker is terminal run python application  that allow user to store details for example username and password for their account.
 

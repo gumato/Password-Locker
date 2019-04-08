@@ -17,14 +17,14 @@ class Credential:
     #
     #     return current_user
 
-    def __init__(self,user_name,site_name,account_name,password):
+    def __init__(self,user_name,account_name,password, confirm_password):
         '''
         Method to define the properties for each user object will hold.
         '''
         self.user_name = user_name
-        self.site_name = site_name
         self.account_name = account_name
         self.password = password
+        self.confirm_password = confirm_password
 
     def save_credentials(self):
         '''
@@ -41,30 +41,26 @@ class Credential:
 
 
     @classmethod
-    def find_by_site_name(cls,site_name):
+    def find_by_user_name(cls,user_name):
         '''
-		Method that takes in a site_name and returns a credential that matches the site_name.
+		Method that takes in a user_name and returns a credential that matches the user_name.
 		'''
         for credential in cls.credentials_list:
-            if credential.site_name == site_name:
+            if credential.user_name == user_name:
                 return credential
 
     @classmethod
-    def display_credentials(cls,user_name):
+    def display_all_details(cls):
         '''
         Class method to display list of  credentials saved
         '''
-        user_credentials_list = []
-        for credential in cls.credentials_list:
-            if credential.user_name == user_name:
-                user_credentials_list.append(credential)
-                return user_credentials_list
+        return cls.user_detail
 
 
     @classmethod
-    def copy_credential(cls,site_name):
+    def copy_credential(cls,user_name):
         '''
-		Class method that copies a credential's info after the credential's site name is entered
+		Class method that copies a credential's info after the credential's user name is entered
 		'''
-        find_credential = Credential.find_by_site_name(site_name)
+        find_credential = Credential.find_by_user_name(user_name)
         return pyperclip.copy(find_credential.password)
