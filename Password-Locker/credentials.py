@@ -20,13 +20,12 @@ class Credential:
     #
     #     return current_user
 
-    def __init__(self,user_name,account_name,password, confirm_password):
+    def __init__(self, user_name, site_name, password):
         '''
         Method to define the properties for each user object will hold.
         '''
         self.user_name = user_name
-        self.account_name = account_name
-        self.site_name =site_name
+        self.site_name = site_name
         self.password = password
 
 
@@ -40,12 +39,12 @@ class Credential:
         '''
         Method to generate an 8 character password for a credential
         '''
-        gen_pass = ''.join(random.choice(char)for _ in range(size))
+        generate_password = ''.join(random.choice(char)for _ in range(size))
         return generate_password
 
 
     @classmethod
-    def find_by_site_name(cls,user_name):
+    def find_by_site_name(cls,site_name):
         '''
 		Method that takes in a sit_name and returns a credential that matches the site_name.
 		'''
@@ -54,11 +53,11 @@ class Credential:
                 return credential
 
     @classmethod
-    def display_credentials(cls,user_name):
+    def display_credentials(cls):
         '''
         Class method to display list of  credentials saved
         '''
-        return cls.user_name
+        return cls.credentials_list
 
 
     @classmethod
