@@ -99,12 +99,12 @@ def main():
 					elif short_code == 'cc':
 						print(' ')
 						print('Enter your credential details:')
-						account_name = input('Enter your account\'s name - ').strip()
                         site_name = input('Enter the site\'s name- ').strip()
+                        account_name = input('Enter your account\'s name - ').strip()
 						while True:
 							print(' ')
 							print("*"*10)
-							print('Please choose an option for entering a password: \n ep-enter existing password \n gp-generate a password \n ex-exit')
+							print('Please choose an option for entering a password: 1: ep-enter existing password 2: gp-generate a password 3: ex-exit')
 							psw_choice = input('Enter an option: ').lower().strip()
 							print("*"*10)
 							if psw_choice == 'ep':
