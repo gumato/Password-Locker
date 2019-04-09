@@ -89,7 +89,7 @@ def main():
 				print(' ')
 				while True:
 					print("*"*10)
-					print('Navigation codes: 1: cc-Create a Credential 2: dc-Display Credentials 3: copy-Copy Password \n ex-Exit')
+					print('Navigation codes: 1: cc-Create a Credential 2: dc-Display Credentials 3: copy-Copy Password 4: ex-Exit')
 					short_code = input('Enter a choice: ').lower().strip()
 					print("*"*10)
 					if short_code == 'ex':
@@ -139,8 +139,7 @@ def main():
 						chosen_site = input('Enter the site name for the credential password to copy: ')
 						copy_credential(chosen_site)
 						print('')
-					else:
-						print('Oops! Wrong option entered. Try again.')
+					
 
 			else:
 				print(' ')
