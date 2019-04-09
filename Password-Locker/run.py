@@ -99,8 +99,8 @@ def main():
 					elif short_code == 'cc':
 						print(' ')
 						print('Enter your credential details:')
-						site_name = input('Enter the site\'s name- ').strip()
 						account_name = input('Enter your account\'s name - ').strip()
+                        site_name = input('Enter the site\'s name- ').strip()
 						while True:
 							print(' ')
 							print("*"*10)
